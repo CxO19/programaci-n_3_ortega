@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces</title>
+</head>
+<body>
+    <h1>Registro de Interesados</h1>
+    <form action="/procesar-inmobiliaria" method="post"> 
+        <table border="1">
+            <tr> 
+                <td> 
+                    <label for="nombre"> Nombre Completo </label>
+                    <input type="text" id="nombre" name="nombre">
+                </td>
+                <td>   
+                    <label for="email"> Correo de Contacto </label>
+                    <input type="email" id="email" name="email">
+                </td>
+            </tr>
+            <tr> 
+                <td> 
+                    <label for="clave"> Código de Agente </label> 
+                    <input type="password" id="clave" name="clave"> <br>
+                </td>
+                <td>
+                    <label for="catastro"> Enlace de Catastro </label> 
+                    <input type="url" id="catastro" name="catastro">
+                </td>
+            </tr>
+            <tr> 
+                <td> 
+                    <label for="firma"> Firma Digital (PIN) </label> 
+                    <input type="password" id="firma" name="firma"> <br>
+                </td>
+                <td>
+                    <label for="perfil"> Perfil de Inversionista </label> 
+                    <input type="url" id="perfil" name="perfil">
+                </td>
+            </tr>
+            <tr> 
+                <td> 
+                    <label for="telefono"> Teléfono de contacto </label> 
+                    <input type="tel" id="telefono" name="telefono"> <br>
+                </td>
+                <td>
+                    <label for="buscar"> Buscar Propiedad </label> 
+                    <input type="search" id="buscar" name="buscar">
+                </td>
+            </tr>
+
+            <tr> 
+                <td> 
+                    <label for="presupuesto"> Presupuesto (k$) </label> 
+                    <input type="number" id="presupuesto" name="presupuesto" min="50" max="1000" step="10"> <br>
+                </td>
+                <td>
+                    <label for="interes"> Interés de Compra <span id="val-vol">50</span>%</label><br>
+                    <input type="range" id="interes" name="interes" min="0" max="100" value="50"
+                    oninput="document.getElementById('val-vol').textContent=this.value"
+                    >
+                </td>
+            </tr>
+        </table>
+        
+        <button type="submit"> Enviar Solicitud </button>
+    </form>
+</body>
+</html>
