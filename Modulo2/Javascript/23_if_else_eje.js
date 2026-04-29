@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")();
+
 const horaActual = 14; // hora en formato 24h
 
 if (horaActual < 12) {
