@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario con Validacion</h1>
+    <form action="/procesar" method="post">
+        <fieldset>
+            <legend>Campo obligatorio</legend>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre de la propiedad" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Minlength / Maxlength</legend>
+            <label for="apellido">Apellido</label><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Descripción corta de la zona" min="18" max="99">
+        </fieldset>
+
+        <fieldset>
+            <legend>Patron de Caracteres - Expresion Regular</legend>
+            <label for="codigo_postal">Codigo postal</label><br>
+            <input type="password" id="codigo_postal" name="codigo_postal" placeholder="CP de la ubicación" pattern="[0-9]{5}">
+        </fieldset>
+
+        <fieldset>
+            <legend>min / max rango para numeros</legend>
+            <label for="edad">Edad</label><br>
+            <input type="number" id="edad" name="edad" placeholder="Años de antigüedad" min="18" max="99">
+        </fieldset>
+
+        <fieldset>
+            <legend>Deshabilitado</legend>
+            <label for="ref">Referencia</label><br>
+            <input type="text" id="ref" name="ref" value="INMO-2024-X" disabled>
+        </fieldset>
+
+        <fieldset>
+            <legend>Solo Lectura</legend>
+            <label for="pais">Pais</label><br>
+            <input type="text" id="pais" name="pais" value="Sector Residencial" readonly>
+        </fieldset>
+        <button type="submit">Crear Cuenta</button>
+    </form>
+</body>
+</html>
