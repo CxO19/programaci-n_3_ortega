@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3ro Semestre</title>
+    
+    <link rel="stylesheet" href="04_display_mp.css">
+    <link rel="stylesheet" href="04_reset_mp.css">
+
+</head>
+<body>
+    <h1 style="color: tomato;">DISPLAY</h1>
+    <div class="banner-oferta"> Oferta especial: 20% en arriendos seleccionados</div>
+
+    <div class="etiqueta-nuevo">Nueva propiedad</div>
+
+    <button class="btn-carrito">Ver Favoritos</button>
+
+    <button onclick="toggleMenu()">Menu</button>
+    <div id="menu" class="menu-movil">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Propiedades</a></li>
+            <li><a href="#">Contactar Agente</a></li>
+        </ul>
+    </div>
+    <script>
+        function toggleMenu(){
+            const menu = document.getElementById('menu')
+            menu.classList.toggle('activo')
+        }
+    </script>
+</body>
+</html>
