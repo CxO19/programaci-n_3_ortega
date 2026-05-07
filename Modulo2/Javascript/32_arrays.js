@@ -122,25 +122,25 @@ console.log(resumen);
 // ]
 
 
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numeros1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Solo los pares
-const pares = numeros.filter(n => n % 2 === 0);
+const pares = numeros1.filter(n => n % 2 === 0);
 console.log(pares);   // [2, 4, 6, 8, 10]
 
 // Solo los mayores de 5
-const mayores = numeros.filter(n => n > 5);
+const mayores = numeros1.filter(n => n > 5);
 console.log(mayores); // [6, 7, 8, 9, 10]
 
 // Filtrar objetos
-const usuarios = [
+const usuarios1 = [
   { nombre: "Ana",   edad: 28, activo: true  },
   { nombre: "Luis",  edad: 16, activo: true  },
   { nombre: "Marta", edad: 31, activo: false },
   { nombre: "Pedro", edad: 22, activo: true  }
 ];
 
-const adultosActivos = usuarios.filter(u => u.edad >= 18 && u.activo);
+const adultosActivos = usuarios1.filter(u => u.edad >= 18 && u.activo);
 console.log(adultosActivos.map(u => u.nombre));   // ["Ana", "Pedro"]
 
 
@@ -148,23 +148,23 @@ console.log(adultosActivos.map(u => u.nombre));   // ["Ana", "Pedro"]
 // reduce(callback, valorInicial)
 // callback recibe: (acumulador, elementoActual, indice, array)
 
-const numeros = [1, 2, 3, 4, 5];
+const numeros2 = [1, 2, 3, 4, 5];
 
 // Suma total
-const suma = numeros.reduce((acum, n) => acum + n, 0);
+const suma = numeros2.reduce((acum, n) => acum + n, 0);
 console.log(suma);   // 15
 
 // Producto
-const producto = numeros.reduce((acum, n) => acum * n, 1);
+const producto = numeros2.reduce((acum, n) => acum * n, 1);
 console.log(producto);   // 120
 
 // Máximo sin Math.max
-const maximo = numeros.reduce((max, n) => n > max ? n : max, -Infinity);
+const maximo = numeros2.reduce((max, n) => n > max ? n : max, -Infinity);
 console.log(maximo);   // 5
 
 // Contar ocurrencias — acumulador es un objeto
-const frutas = ["manzana", "banana", "manzana", "cereza", "banana", "manzana"];
-const conteo = frutas.reduce((acum, fruta) => {
+const frutas1 = ["manzana", "banana", "manzana", "cereza", "banana", "manzana"];
+const conteo = frutas1.reduce((acum, fruta) => {
   acum[fruta] = (acum[fruta] ?? 0) + 1;
   return acum;
 }, {});
@@ -176,3 +176,12 @@ const anidado = [[1, 2], [3, 4], [5, 6]];
 const plano   = anidado.reduce((acum, arr) => [...acum, ...arr], []);
 console.log(plano);   // [1, 2, 3, 4, 5, 6]
 // alternativa moderna: anidado.flat()
+
+
+
+//Ejercicio
+
+const celsius = [0, 15, -5, 22, 37, 100, -10, 28];
+
+const resultado = celsius.filter(temp => temp >= 0 && temp <= 30) 
+console.log(resultado.map(temp => (temp * 9/5) + 32));   
