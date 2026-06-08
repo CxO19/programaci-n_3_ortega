@@ -1,29 +1,18 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import { UsersService } from '../users/users.service';
-import { LoginDto } from './dto/login.dto';
-import { CreateUserDto } from '../users/dto/create-user.dto';
-import * as bcrypt from 'bcrypt';
+import { Test, TestingModule } from '@nestjs/testing';
+import { AuthService } from './auth.service';
 
-@Injectable()
-export class AuthService {
-  constructor(
-    private readonly usersService: UsersService,
-    private readonly jwtService: JwtService,
-  ) {}
+describe('AuthService', () => {
+  let service: AuthService;
 
-  async login(loginDto: LoginDto) {
-    const user = await this.usersService.findByEmail(loginDto!.email!);
-    if (!user || !(await bcrypt.compare(loginDto!.password!, user!.password!))) {
-      throw new UnauthorizedException('Credenciales inválidas');
-    }
-    const payload = { id: user.id, email: user.email };
-    return { access_token: this.jwtService.sign(payload) };
-  }
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [AuthService],
+    }).compile();
 
-  async register(createUserDto: CreateUserDto) {
-    const user = await this.usersService.create(createUserDto);
-    const payload = { id: user!.id, email: user!.email };
-    return { access_token: this.jwtService.sign(payload) };
-  }
-}
+    service = module.get<AuthService>(AuthService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});

@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { ProductDto } from './product.dto';
+import { paginate } from 'nestjs-typeorm-paginate/dist/paginate';
+import { User } from './users/user.entity';
+import { Pagination } from 'nestjs-typeorm-paginate/dist/pagination';
+import { IPaginationOptions } from 'nestjs-typeorm-paginate/dist/interfaces';
 
 @Injectable()
 export class AppService {
+  [x: string]: any;
   private products: ProductDto[] = [
     {
       id: 1,
@@ -42,8 +47,9 @@ export class AppService {
     };
   }
 
-  findAll(): ProductDto[] {
-    return this.products;
+  async findAll(options: IPaginationOptions): Promise<Pagination<User>> {
+    const queryBuilder = this.userRepository.createQueryBuilder('user');
+    return paginate<User>(queryBuilder, options);
   }
 
   findById(id: string): ProductDto {
