@@ -15,3 +15,18 @@ document.getElementById('btn3').addEventListener('click', () => {
     nuevoProducto.textContent = "Nuevo producto desde Evento Listener";
     lista2.appendChild(nuevoProducto);
 });
+
+document.getElementById('campo')
+    .addEventListener('input', () => {
+        console.log("Valor del campo: ",
+            document.getElementById('campo').value);
+    });
+
+document.getElementById('campo_actualizar_parrafo')
+    .addEventListener('input', () => {
+    const valorCampo = document
+        .getElementById('campo_actualizar_parrafo').value;
+    document.getElementById('parrafo')
+        .textContent = 
+            'Valor actualizado: ${valorCampo}';
+});
