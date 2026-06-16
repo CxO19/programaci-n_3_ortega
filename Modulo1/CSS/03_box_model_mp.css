@@ -1,0 +1,47 @@
+.producto-card {
+  width: 280px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 16px;
+  background-color: #ff0000;
+}
+
+.item-card {
+  width: 280px;
+  border: 5px solid #279913;
+  border-radius: 8px;
+  margin: 3px;
+  background-color: aqua;
+
+  /* Un valor: los 4 lados */
+  /*padding: 20px;*/
+
+  /* Dos valores: vertical | horizontal */
+  /*padding: 10px 20px;*/
+
+  /* Tres valores: top | horizontal | bottom */
+  /*padding: 10px 20px 15px;*/
+
+  /* Cuatro valores: top | right | bottom | left */
+  padding: 10px 22px 15px 25px;
+}
+
+.producto-card1 {
+  width: 280px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 16px;
+  background-color: #ff0000;
+}
+
+.producto-card2 {
+  width: 280px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 16px;
+  background-color: #ff0000;
+}
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi página Inmobiliaria</title>
+</head>
+<body>
+  <h1 id="titulo">Bienvenido a InmoExpert</h1>
+
+  <!-- Mejor ubicar el script al final del body para no bloquear el renderizado -->
+  <script>
+    const titulo = document.getElementById("titulo");
+    titulo.textContent = "¡Encuentra tu próximo hogar con JS!";
+    console.log("Script interno del portal ejecutado");
+    console.log("Sistema de gestión inmobiliaria listo");
+  </script>
+  <script src="01_hello_word_mp.js" defer></script>
+</body>
+</html>
