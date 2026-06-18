@@ -4,6 +4,7 @@ interface Fruit {
   name: string
   emoji: string
   calories: number
+  inSeason: boolean
 }
 
 interface FruitListProps {
@@ -20,14 +21,15 @@ export default function FruitList({ fruits, title = 'Frutas' }: FruitListProps) 
     <div>
       <h3 style={{ marginBottom: 8 }}>{title}</h3>
       <ul style={{ listStyle: 'none', padding: 0 }}>
-        {fruits.map((fruit) => (
+        {fruits.map((fruit, i) => (
           <li
-            key={fruit.name}
+            key={i}
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #eee',
+              borderBottom: 'none',
+              backgroundColor: '  ',
             }}
           >
             <span>{fruit.emoji} {fruit.name}</span>
