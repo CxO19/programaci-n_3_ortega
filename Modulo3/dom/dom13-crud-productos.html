@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+    <script src="dom13-crud-productos.js" defer></script>
+    <style>
+        body{ 
+        font-family: Arial, sans-serif; 
+        margin: 20px; 
+        }
+
+        h2{ 
+        color: black; 
+        }
+
+        table{ 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 20px; 
+        }
+
+        th, td{ 
+        border: 1px solid #ddd; 
+        padding: 8px; 
+        text-align: left; 
+        }
+
+        th{ 
+        background-color: aliceblue;
+        }
+
+        tr{
+        background-color: antiquewhite; 
+        }
+
+        tr:nth-child(even){
+        background-color: azure; 
+        }
+
+        .formulario{ 
+        background-color: aquamarine; 
+        border: 1px solid #b0fce8; 
+        padding: 20px; 
+        margin-top: 20px;
+        }
+
+        .formulario input{
+        width: 150px; 
+        padding: 5px; 
+        margin-bottom: 8px;
+        }
+
+        .btn-agregar:hover{
+        background-color: rgb(8, 104, 72); 
+        color: white;
+        }
+
+        .stat-card{
+        display: inline-block;
+        width: 200px;
+        padding: 15px;
+        margin: 10px;
+        background-color: aquamarine;
+        border: 1px solid #b0fce8;
+        border-radius: 5px;
+        text-align: center;
+        }
+
+        .stat-card h3{
+        margin: 0;
+        color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Eventos del DOM</h1>
+    <h2>CRUD de Empleados</h2>
+    <div id="status">
+        <div class="stat-card">
+            <h3>Total de Empleados</h3>
+            <p id="totalProductos">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Sueldo Promedio</h3>
+            <p id="precioPromedio">0</p>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <h3>Agregar nuevo empleado</h3>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" placeholder="Nombre del empleado">
+        <label for="apellido">Apellido:</label>
+        <input id="apellido" type="text" placeholder="Apellido del empleado">
+        <label for="sueldo">Sueldo:</label>
+        <input id="sueldo" type="number" placeholder="Sueldo del empleado">
+        <button id="btn_agregar" class="btn-agregar">Agregar Empleado</button>
+        <button id="btn_cancelar" class="btn-cancelar">Cancelar</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Sueldo</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+    </table>
+</body>
+</html>
