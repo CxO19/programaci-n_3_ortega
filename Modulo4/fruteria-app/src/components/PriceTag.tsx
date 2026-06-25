@@ -1,9 +1,10 @@
-type Currency = 'USD' | 'EUR' | 'COP' | 'MXN'
+type Currency = 'USD' | 'EUR' | 'COP' | 'MXN' | 'GBP'
 
 interface PriceTagProps {
   amount: number
   currency?: Currency
   discountPercent?: number
+  size?: 'small' | 'large'
 }
 
 export default function PriceTag({
@@ -19,6 +20,7 @@ export default function PriceTag({
     EUR: '€',
     COP: '$',
     MXN: '$',
+    GBP: '£',
   }
 
   const symbol = symbols[currency]
