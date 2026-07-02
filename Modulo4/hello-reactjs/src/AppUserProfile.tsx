@@ -9,7 +9,7 @@ export default function App() {
         fullName="Ana García"
         email="ana@ejemplo.com"
         role="admin"
-        isActive={true}
+        isActive={false}
         skills={['TypeScript', 'React', 'Node.js', 'GraphQL']}
         bio="Desarrolladora fullstack con 5 años de experiencia."
       />
@@ -18,9 +18,9 @@ export default function App() {
         fullName="Luis Mora"
         email="luis@ejemplo.com"
         role="viewer"
-        isActive={true}
+        isActive={false}
         skills={['Figma', 'CSS']}
-        bio="Diseñador con experiencia en sistema UI"
+        bio="Diseñador con experiencia en sistemas UI"
       />
     </main>
   )

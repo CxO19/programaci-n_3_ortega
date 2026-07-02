@@ -1,3 +1,5 @@
+// src/components/ProductCatalogList.tsx
+
 interface Product {
   id: number
   name: string
@@ -23,7 +25,7 @@ export default function ProductCatalogList({
         <p style={{ color: '#999' }}>No hay productos disponibles.</p>
       )}
 
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul style={{ listStyle: 'disc', padding: 0 }}>
         {products.map((product) => (
           <li
             key={product.id}
@@ -42,8 +44,7 @@ export default function ProductCatalogList({
                   Agotado
                 </em>
               )}
-
-                <em>
+                <em style={{ marginLeft: 12, color: 'rgb(255, 255, 255)' }}>
                     {product.category}
                 </em>
             </span>
@@ -51,6 +52,9 @@ export default function ProductCatalogList({
           </li>
         ))}
       </ul>
+      <footer>
+        {products.length} producto(s)
+      </footer>
     </section>
   )
 }

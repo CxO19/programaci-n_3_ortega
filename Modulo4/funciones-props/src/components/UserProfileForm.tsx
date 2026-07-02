@@ -4,7 +4,7 @@ interface UserProfile {
   name: string
   email: string
   age: number
-  city: string 
+  city: string
 }
 
 export default function UserProfileForm() {
@@ -17,8 +17,8 @@ export default function UserProfileForm() {
 
   function handleChange(field: keyof UserProfile, value: string | number) {
     setProfile((prev) => ({
-      ...prev,        
-      [field]: value, 
+      ...prev,        // copia todos los campos actuales
+      [field]: value, // sobreescribe solo el campo que cambió
     }))
   }
 
@@ -44,21 +44,18 @@ export default function UserProfileForm() {
         onChange={(e) => handleChange('age', Number(e.target.value))}
         style={inputStyle}
       />
-
       <input
         placeholder="Ciudad"
         value={profile.city}
         onChange={(e) => handleChange('city', e.target.value)}
         style={inputStyle}
       />
-
       <div style={{ marginTop: 8, padding: 12, background: '#f5f5f5', borderRadius: 6 }}>
         <p style={{ margin: 0, fontSize: 13 }}>
-          <strong>{profile.name || '—'}</strong> · {profile.email || '—'} · {profile.age || '—'} años
-        </p>
-        
-        <p style={{ margin: '4px 0 0 0', fontSize: 13 }}>
-          <strong>Ciudad:</strong> {profile.city || '—'}
+          <strong>{profile.name || '—'}</strong> · {profile.email || '—'} · {profile.age || '—'} años 
+          <p>
+            <strong>Ciudad:</strong> {profile.city || '—'}  
+          </p>
         </p>
       </div>
     </form>

@@ -1,3 +1,5 @@
+// src/components/StatusBadge.tsx
+
 type BadgeStatus = 'active' | 'inactive' | 'pending' | 'error'
 
 interface StatusBadgeProps {

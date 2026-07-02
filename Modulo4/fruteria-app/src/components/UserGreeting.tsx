@@ -1,5 +1,4 @@
 // src/components/UserGreeting.tsx
-
 interface UserGreetingProps {
   name: string
   occupation?: string

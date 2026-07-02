@@ -1,26 +1,24 @@
 // src/App.tsx
-
 import DocumentTitle    from './components/DocumentTitle'
 import OnlineStatus     from './components/OnlineStatus'
-import WindowSize       from './components/WindSize'
+import WindowSize       from './components/WindowSize'
 import LiveClock        from './components/LiveClock'
 import SearchWithEffect from './components/SearchWithEffect'
 import DebounceSearch   from './components/DebounceSearch'
 import FetchUser        from './components/FetchUser'
 import AutoFocusInput   from './components/AutoFocusInput'
-
 // ┌──────────────────────────────────────────────────────────────────────┐
-// │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.       │
+// │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
 // │  1  DocumentTitle    — useEffect con array vacío, limpia al desmontar│
 // │  2  OnlineStatus     — subscripción a eventos online/offline         │
 // │  3  WindowSize       — evento resize con estado objeto tipado        │
 // │  4  LiveClock        — setInterval con inicializador perezoso        │
 // │  5  SearchWithEffect — efecto con dependencia, búsqueda sincronizada │
 // │  6  DebounceSearch   — setTimeout/clearTimeout, patrón debounce      │
-// │  7  FetchUser        — fetch real, loading/error, flag cancelled     │
+// │  7  FetchUser        — fetch real, loading/error, flag cancelled      │
 // │  8  AutoFocusInput   — useRef + useEffect para foco imperativo       │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 7
+const PASO = 8
 
 export default function App() {
   const content =

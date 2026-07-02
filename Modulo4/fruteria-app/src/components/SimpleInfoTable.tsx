@@ -1,3 +1,5 @@
+// src/components/SimpleInfoTable.tsx
+
 interface TableRow {
   label: string
   value: string | number

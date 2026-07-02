@@ -4,30 +4,31 @@ interface Task {
   id: number
   text: string
   done: boolean
-  title: string
+  titulo: string 
 }
 
 export default function TaskManager() {
   const [tasks, setTasks] = useState<Task[]>([])
-  const [input, setInput] = useState('')
-  const [title, setTitle] = useState('')
+  const [input,setInput] = useState('')
+  const [title,setTitle] = useState('')
 
-
+  // AGREGAR — spread del array anterior más el nuevo item
   function addTask() {
     if (!input.trim()) return
     setTasks((prev) => [
       ...prev,
-      { id: Date.now(), text: input.trim(), done: false , title: input.trim()},
+      { id: Date.now(), text: input.trim(), done: false , titulo:title.trim()},
     ])
-    setInput('')
     setTitle('')
-
+    setInput('')
   }
 
+  // ELIMINAR — filter crea un nuevo array sin el elemento
   function removeTask(id: number) {
     setTasks((prev) => prev.filter((task) => task.id !== id))
   }
 
+  // ACTUALIZAR — map crea un nuevo array con el elemento modificado
   function toggleTask(id: number) {
     setTasks((prev) =>
       prev.map((task) =>
@@ -35,8 +36,6 @@ export default function TaskManager() {
       )
     )
   }
-
-
 
   return (
     <div style={{ maxWidth: 380 }}>
@@ -46,17 +45,15 @@ export default function TaskManager() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && addTask()}
           placeholder="Nueva tarea..."
-          style={{ flex: 1, padding: '8px 12px', borderRadius: 6, border: '1px solid #ddd' }} 
+          style={{ flex: 1, padding: '8px 12px', borderRadius: 6, border: '1px solid #ddd' }}
         />
-
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && addTask()}
-          placeholder="Titulo de la tarea"
+          placeholder="Titulo..."
           style={{ flex: 1, padding: '8px 12px', borderRadius: 6, border: '1px solid #ddd' }}
         />
-
         <button
           onClick={addTask}
           style={{ padding: '8px 16px', background: '#0070f3', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}
@@ -95,21 +92,21 @@ export default function TaskManager() {
             >
               {task.text}
             </span>
-
-            <span
+             <span
               style={{
                 flex: 1,
                 textDecoration: task.done ? 'line-through' : 'none',
                 color: task.done ? '#aaa' : '#333',
               }}
             >
-              {task.title}
+              {task.titulo}
             </span>
-
             <button
               onClick={() => removeTask(task.id)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#e00', fontSize: 16 }}
             >
+            
+
               ✕
             </button>
           </li>

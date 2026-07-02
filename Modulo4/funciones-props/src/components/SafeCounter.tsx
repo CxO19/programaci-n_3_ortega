@@ -14,10 +14,10 @@ export default function SafeCounter() {
   // Ejemplo donde la diferencia importa: incrementar 3 veces seguidas
   function incrementThree() {
     // ❌ Las tres líneas leen el mismo valor de count — resultado: +1
-    /*setCount(count + 1)
     setCount(count + 1)
     setCount(count + 1)
-*/
+    setCount(count + 1)
+
     // ✅ Cada llamada recibe el prev actualizado — resultado: +3
     setCount((prev) => prev + 1)
     setCount((prev) => prev + 1)

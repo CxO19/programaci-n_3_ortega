@@ -51,9 +51,9 @@ export default function FetchUser() {
   }, [userId])
 
   return (
-    <div style={{ maxWidth: 360 }}>
+    <div style={{ maxWidth: 420 }}>
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-        {[1, 2, 3].map((id) => (
+        {[1, 2, 3,4,5].map((id) => (
           <button
             key={id}
             onClick={() => setUserId(id)}
@@ -87,13 +87,18 @@ export default function FetchUser() {
           <p style={{ margin: 0, fontSize: 13, color: '#6b7280' }}>
             {user.email}
           </p>
-          <p style={{margin:0, fontSize: 13, color:'#654521'}}>
+           <p style={{ margin: 0, fontSize: 13, color: '#6b7280' }}>
+            {user.address.street}
+          </p>
+           <p style={{ margin: 0, fontSize: 13, color: '#6b7280' }}>
             {user.address.city}
           </p>
-          <p style={{margin:0, fontSize: 13, color:'#654521'}}>
+           <p style={{ margin: 0, fontSize: 13, color: '#6b7280' }}>
             {user.website}
           </p>
-
+           <p style={{ margin: 0, fontSize: 13, color: '#6b7280' }}>
+            {user.address.geo.lat}
+          </p>
         </div>
       )}
     </div>

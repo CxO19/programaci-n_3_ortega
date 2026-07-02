@@ -1,4 +1,6 @@
-type TimeOfDay = 'morning' | 'afternoon' | 'evening' | 'night'
+// src/components/ConditionalGreeting.tsx
+
+type TimeOfDay = 'morning' | 'afternoon' | 'evening'
 
 interface ConditionalGreetingProps {
   isLoggedIn: boolean
@@ -15,7 +17,6 @@ export default function ConditionalGreeting({
     morning:   'Buenos días',
     afternoon: 'Buenas tardes',
     evening:   'Buenas noches',
-    night:     'Buenas noches',
   }
 
   if (!isLoggedIn) {
