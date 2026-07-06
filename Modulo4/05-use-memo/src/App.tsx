@@ -1,5 +1,3 @@
-// src/App.tsx
-
 import PrimeSieve        from './components/PrimeSieve'
 import FilteredCatalog   from './components/FilteredCatalog'
 import OrderMetrics      from './components/OrderMetrics'
@@ -8,8 +6,10 @@ import MultiTagFilter    from './components/MultiTagFilter'
 import MemoizedList    from './components/MemoizedList'
 // import SearchWithFetch from './components/SearchWithFetch'
 // import FilterTable     from './components/FilterTable'
-// import PaginatedFetch  from './components/PaginatedFetch'
-
+//import PaginatedFetch  from './components/PaginatedFetch'
+import ModalDemo from './components/ModalDemo'
+import ThemeSelector from './components/ThemeSelector'
+import PostList from './components/PostList'
 
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
@@ -18,7 +18,7 @@ import MemoizedList    from './components/MemoizedList'
 // │  3  OrderMetrics     — múltiples useMemo derivados de un filtro     │
 // │  4  MultiTagFilter   — filtro AND por tags con conteos memoizados   │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 5
+const PASO = 13
 
 export default function App() {
   const content =
@@ -31,7 +31,15 @@ export default function App() {
     PASO === 5 ? <MemoizedList /> :
     // PASO === 6 ? <SearchWithFetch /> :
     // PASO === 7 ? <FilterTable /> :
-    // PASO === 8 ? <PaginatedFetch /> :
+    PASO === 8 ? <PaginatedFetch /> :
+    // Hooks personalizados
+    PASO === 9 ? <ModalDemo /> : /*
+    PASO === 10 ? <QuantitySelector /> : */
+    PASO === 11 ? <ThemeSelector /> : /*
+    PASO === 12 ? <LiveSearch /> : */
+    PASO === 13 ? <PostList /> : /*
+    PASO === 14 ? <ResponsiveLayout /> : */
+    PASO === 15 ? <CodeBlock code={EXAMPLE_CODE} language="tsx" /> :
     <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
