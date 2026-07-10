@@ -2,6 +2,9 @@
 
 // import { ThemeProvider }    from './theme/ThemeContext'
 import CssGlobalDemo        from './components/CssGlobalDemo'
+import CssModuleDemo from './components/CssModuleDemo'
+import InlineStyleDemo from './components/InlineStyleDemo'
+import StyledComponentsDemo from './components/StyledComponentsDemo'
 
 import './styles/global.css'
 
@@ -15,14 +18,14 @@ import './styles/global.css'
 // │  6  HoverDemo            — hook useHover para efectos hover         │
 // │  7  ThemePanel           — Context + CSS variables para theming     │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 1
+const PASO = 4
 
 export default function App() {
   const content =
-    PASO === 1 ? <CssGlobalDemo /> : /*
-    PASO === 2 ? <InlineStyleDemo /> :
-    PASO === 3 ? <CssModuleDemo /> :
-    PASO === 4 ? <StyledComponentsDemo /> :
+    PASO === 1 ? <CssGlobalDemo /> : 
+    PASO === 2 ? <InlineStyleDemo /> : 
+    PASO === 3 ? <CssModuleDemo /> : 
+    PASO === 4 ? <StyledComponentsDemo /> : /*
     PASO === 5 ? <LiveStyleEditor /> :
     PASO === 6 ? <HoverDemo /> :
     PASO === 7 ? <ThemePanel /> : */
