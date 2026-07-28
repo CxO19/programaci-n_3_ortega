@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces</title>
+</head>
+<body>
+    <h1>Formulario de Propiedad</h1>
+    <form action="/procesar-propiedad" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="propietario">Nombre del Propietario</label><br>
+                    <input type="text" id="propietario" name="propietario">
+                </td>
+                <td>
+                    <label for="email">Correo de Contacto
+                        <br>
+                        <input type="email" id="email" name="email">
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="pin">PIN de Seguridad</label><br>
+                    <input type="password" id="pin" name="pin">
+                </td>
+                <td>
+                    <label for="url">Recorrido Virtual (URL)</label><br>
+                    <input type="url" id="url" name="url">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="telefono">Teléfono Agente</label><br>
+                    <input type="tel" id="telefono" name="telefono">
+                </td>
+                <td>
+                    <label for="buscar">Buscar Código Catastral</label><br>
+                    <input type="search" id="buscar" name="buscar">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="antiguedad">Años de Antigüedad</label><br>
+                    <input type="number" id="antiguedad" name="antiguedad" min="0" max="100" step="1">
+                </td>
+
+                <td>
+                    <label for="interes"> Interés de Compra <span id="val-vol">50</span>%</label><br>
+                    <input type="range" id="interes" name="interes" min="0" max="100" value="50"
+                    oninput="document.getElementById('val-vol').textContent=this.value">  
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3>Agenda de Visitas</h3>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="fecha">Fecha de Disponibilidad</label><br>
+                    <input type="date" id="fecha" name="fecha">
+                </td>
+
+                <td>
+                    <label for="hora">Hora de Inspección</label><br>
+                    <input type="time" id="hora" name="hora">  
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="inicio_obra">Inicio de Construcción</label><br>
+                    <input type="datetime-local" id="inicio_obra" name="inicio_obra">
+                </td>
+
+                <td>
+                    <label for="mes_entrega">Mes de Entrega</label><br>
+                    <input type="month" id="mes_entrega" name="mes_entrega">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3>Servicios y Pagos</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox" id="seguro" name="seguro" value="1">
+                    <label for="seguro">Incluye seguro de desgravamen</label><br>
+                </td>
+
+                <td>
+                    <input type="checkbox" id="parqueo" name="parqueo" value="1">
+                    <label for="parqueo">Incluye parqueadero privado</label><br>
+                </td>
+
+                <td>
+                    <fieldset>
+                        <legend>
+                            Financiamiento
+                        </legend>
+                        <input type="radio" id="biess" name="pago" value="biess">
+                        <label for="biess">Crédito BIESS</label><br>
+
+                        <input type="radio" id="bancario" name="pago" value="bancario">
+                        <label for="bancario">Banco Privado</label><br>
+
+                        <input type="radio" id="contado" name="pago" value="contado">
+                        <label for="contado">Pago de Contado</label><br>
+                    </fieldset>
+                </td>
+            </tr>
+
+             <tr>
+                <td colspan="2">
+                    <h3>Documentación Visual</h3>
+                </td>
+            </tr>
+                <td>
+                    <label for="color">Color de Fachada</label><br>
+                    <input type="color" id="color" name="color" value="#3b82f6">
+                </td>
+
+                <td>
+                    <label for="plano_img">Foto de Fachada</label><br>
+                    <input type="file" id="plano_img" name="plano_img" accept="image/*">
+                </td>
+
+                <td>
+                    <label for="escrituras">Escrituras (PDF)</label><br>
+                    <input type="file" id="escrituras" name="escrituras" accept=".pdf">
+                </td>
+
+                <td>
+                    <input type="hidden" id="id_propiedad" name="id_propiedad" value="PROP-2026-XYZ">
+                </td>
+            <tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3>Detalles y Ubicación</h3>
+                </td>
+            </tr>
+                <td>
+                    <label for="descripcion">Descripción de la Propiedad</label><br>
+                    <textarea id="descripcion" 
+                            name="descripcion" 
+                            rows="6" 
+                            cols="50" placeholder="Escribe los detalles destacados aquí"></textarea>
+                </td>
+
+                <td>
+                    <label for="sucursal">Sucursal Inmobiliaria</label><br>
+                    <select id="sucursal" name="sucursal">
+                        <option value=" ">--Seleccione Sede--</option>
+                        <option value="uioc">Quito Centro</option>
+                        <option value="uion">Quito Norte</option>
+                        <option value="uioz">Valles</option>
+                        <option value="gye">Guayaquil</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="barrio">Barrios Disponibles</label><br>
+                    <select id="barrio" name="barrio">
+                        <optgroup label="Quito Norte">
+                            <option value="car">Carolina</option>
+                            <option value="con">Condado</option>
+                            <option value="pon">Ponciano</option>
+                        </optgroup>
+
+                        <optgroup label="Valles">
+                            <option value="cum">Cumbayá</option>
+                            <option value="tum">Tumbaco</option>
+                        </optgroup>
+
+                        <optgroup label="Guayaquil">
+                            <option value="sam">Samborondón</option>
+                            <option value="ceu">Ceibos</option>
+                        </optgroup>
+                    </select>
+                </td>
+
+                <td>
+                    <label for="amenities">Áreas Comunales</label><br>
+                    <select id="amenities" name="amenities[]" multiple size="4">
+                        <option value="gym">Gimnasio</option>
+                        <option value="pool">Piscina</option>
+                        <option value="bbq">Zona BBQ</option>
+                        <option value="kids">Juegos Infantiles</option>
+                    </select>
+                </td>
+            <tr>
+        </table>
+        
+        <button type="submit">Publicar Propiedad</button>
+        <button type="reset">Limpiar Formulario</button>
+        <button type="button">Ver Previa</button>
+    </form>
+</body>
+</html>
