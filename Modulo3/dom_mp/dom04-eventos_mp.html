@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InmoActual - Manipulación del DOM</title>
+    <script src="dom04-eventos_mp.js" defer></script>
+    <style>
+        .boton {
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Eventos del DOM</h1>
+
+    <h2 onclick="alert('Bienvenido a InmoActual!')">Eventos InLine</h2>
+
+    <h1>Eventos asociados a una funcion</h1>
+
+    <button class="boton" id="btn" 
+        onclick="mostrarAlerta()">
+        Eventos con funcion</button>
+
+    <button class="boton" id="btn2" 
+        onclick="agregarProducto()">
+        Agregar propiedad</button>
+    <ul id="lista-productos1"></ul>
+
+    <h1>Eventos configurados con Listener</h1>
+
+    <button class="boton" id="btn3">
+        Agregar propiedad desde Listener</button>
+    <ul id="lista-productos2"></ul>
+
+    <input id="campo"
+        type="text" placeholder="Escribe algo...">
+
+    <input id="campo_actualizar_parrafo"
+        type="text" placeholder="Nombre de la propiedad...">
+    <p id="parrafo">Valor Inicial</p>
+</body>
+</html>
